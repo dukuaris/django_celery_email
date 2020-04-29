@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fis+t$#7tf-2*1ydev4r*4i4z%7=6g5^_v#b)ykk!c-vdxmm%*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -122,3 +122,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CELERY_BROKER_URL = 'redis://h:p005485f71485f5ae9b909769053f8ff2c15b49b9718aa63cf8423d235a3011af@ec2-18-206-138-40.compute-1.amazonaws.com:30519'
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.naver.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'dukuaris@naver.com'
+EMAIL_HOST_PASSWORD = 'dh88005115!'
+EMAIL_USE_TLS = True
